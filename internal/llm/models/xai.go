@@ -21,7 +21,7 @@ var XAIModels = map[ModelID]Model{
 		CostPer1MOut:       0.50,
 		CostPer1MOutCached: 0,
 		ContextWindow:      2_000_000,
-		DefaultMaxTokens:   20_000,
+		DefaultMaxTokens:   64_000,
 	},
 	XAIGrok41FastNonReasoning: {
 		ID:                 XAIGrok41FastNonReasoning,
@@ -33,7 +33,7 @@ var XAIModels = map[ModelID]Model{
 		CostPer1MOut:       0.50,
 		CostPer1MOutCached: 0,
 		ContextWindow:      2_000_000,
-		DefaultMaxTokens:   20_000,
+		DefaultMaxTokens:   16_000,
 	},
 	XAIGrokCodeFast1: {
 		ID:                 XAIGrokCodeFast1,
@@ -45,7 +45,7 @@ var XAIModels = map[ModelID]Model{
 		CostPer1MOut:       1.50,
 		CostPer1MOutCached: 0,
 		ContextWindow:      256_000,
-		DefaultMaxTokens:   10_000,
+		DefaultMaxTokens:   32_000,
 	},
 	XAIGrok4FastReasoning: {
 		ID:                 XAIGrok4FastReasoning,
@@ -57,7 +57,7 @@ var XAIModels = map[ModelID]Model{
 		CostPer1MOut:       0.50,
 		CostPer1MOutCached: 0,
 		ContextWindow:      2_000_000,
-		DefaultMaxTokens:   20_000,
+		DefaultMaxTokens:   64_000,
 	},
 	XAIGrok4FastNonReasoning: {
 		ID:                 XAIGrok4FastNonReasoning,
@@ -69,6 +69,6 @@ var XAIModels = map[ModelID]Model{
 		CostPer1MOut:       0.50,
 		CostPer1MOutCached: 0,
 		ContextWindow:      2_000_000,
-		DefaultMaxTokens:   20_000,
+		DefaultMaxTokens:   16_000,
 	},
 }
