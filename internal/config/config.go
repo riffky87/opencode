@@ -358,10 +358,10 @@ func setProviderDefaults() {
 
 	// XAI configuration
 	if key := viper.GetString("providers.xai.apiKey"); strings.TrimSpace(key) != "" {
-		viper.SetDefault("agents.coder.model", models.XAIGrok3Beta)
-		viper.SetDefault("agents.summarizer.model", models.XAIGrok3Beta)
-		viper.SetDefault("agents.task.model", models.XAIGrok3Beta)
-		viper.SetDefault("agents.title.model", models.XAiGrok3MiniFastBeta)
+		viper.SetDefault("agents.coder.model", models.XAIGrokCodeFast1)
+		viper.SetDefault("agents.summarizer.model", models.XAIGrok41FastReasoning)
+		viper.SetDefault("agents.task.model", models.XAIGrok41FastReasoning)
+		viper.SetDefault("agents.title.model", models.XAIGrok41FastNonReasoning)
 		return
 	}
 
