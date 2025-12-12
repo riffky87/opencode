@@ -662,6 +662,8 @@ func getProviderAPIKey(provider models.ModelProvider) string {
 		return os.Getenv("AZURE_OPENAI_API_KEY")
 	case models.ProviderOpenRouter:
 		return os.Getenv("OPENROUTER_API_KEY")
+	case models.ProviderXAI:
+		return os.Getenv("XAI_API_KEY")
 	case models.ProviderBedrock:
 		if hasAWSCredentials() {
 			return "aws-credentials-available"
@@ -783,6 +785,30 @@ func setDefaultModelForAgent(agent AgentName) bool {
 
 		cfg.Agents[agent] = Agent{
 			Model:     models.QWENQwq,
+			MaxTokens: maxTokens,
+		}
+		return true
+	}
+
+	// XAI configuration
+	if apiKey := os.Getenv("XAI_API_KEY"); apiKey != "" {
+		var model models.ModelID
+		maxTokens := int64(5000)
+
+		switch agent {
+		case AgentTitle:
+			model = models.XAIGrok41FastNonReasoning
+			maxTokens = 80
+		case AgentTask:
+			model = models.XAIGrok41FastReasoning
+		case AgentSummarizer:
+			model = models.XAIGrok41FastReasoning
+		default:
+			model = models.XAIGrokCodeFast1
+		}
+
+		cfg.Agents[agent] = Agent{
+			Model:     model,
 			MaxTokens: maxTokens,
 		}
 		return true
