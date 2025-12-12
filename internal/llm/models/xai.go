@@ -3,59 +3,72 @@ package models
 const (
 	ProviderXAI ModelProvider = "xai"
 
-	XAIGrok3Beta         ModelID = "grok-3-beta"
-	XAIGrok3MiniBeta     ModelID = "grok-3-mini-beta"
-	XAIGrok3FastBeta     ModelID = "grok-3-fast-beta"
-	XAiGrok3MiniFastBeta ModelID = "grok-3-mini-fast-beta"
+	XAIGrok41FastReasoning    ModelID = "grok-4-1-fast-reasoning"
+	XAIGrok41FastNonReasoning ModelID = "grok-4-1-fast-non-reasoning"
+	XAIGrokCodeFast1          ModelID = "grok-code-fast-1"
+	XAIGrok4FastReasoning     ModelID = "grok-4-fast-reasoning"
+	XAIGrok4FastNonReasoning  ModelID = "grok-4-fast-non-reasoning"
 )
 
 var XAIModels = map[ModelID]Model{
-	XAIGrok3Beta: {
-		ID:                 XAIGrok3Beta,
-		Name:               "Grok3 Beta",
+	XAIGrok41FastReasoning: {
+		ID:                 XAIGrok41FastReasoning,
+		Name:               "Grok 4.1 Fast Reasoning",
 		Provider:           ProviderXAI,
-		APIModel:           "grok-3-beta",
-		CostPer1MIn:        3.0,
-		CostPer1MInCached:  0,
-		CostPer1MOut:       15,
+		APIModel:           "grok-4-1-fast-reasoning",
+		CostPer1MIn:        0.20,
+		CostPer1MInCached:  0.05,
+		CostPer1MOut:       0.50,
 		CostPer1MOutCached: 0,
-		ContextWindow:      131_072,
+		ContextWindow:      2_000_000,
 		DefaultMaxTokens:   20_000,
 	},
-	XAIGrok3MiniBeta: {
-		ID:                 XAIGrok3MiniBeta,
-		Name:               "Grok3 Mini Beta",
+	XAIGrok41FastNonReasoning: {
+		ID:                 XAIGrok41FastNonReasoning,
+		Name:               "Grok 4.1 Fast Non-Reasoning",
 		Provider:           ProviderXAI,
-		APIModel:           "grok-3-mini-beta",
-		CostPer1MIn:        0.3,
-		CostPer1MInCached:  0,
-		CostPer1MOut:       0.5,
+		APIModel:           "grok-4-1-fast-non-reasoning",
+		CostPer1MIn:        0.20,
+		CostPer1MInCached:  0.05,
+		CostPer1MOut:       0.50,
 		CostPer1MOutCached: 0,
-		ContextWindow:      131_072,
+		ContextWindow:      2_000_000,
 		DefaultMaxTokens:   20_000,
 	},
-	XAIGrok3FastBeta: {
-		ID:                 XAIGrok3FastBeta,
-		Name:               "Grok3 Fast Beta",
+	XAIGrokCodeFast1: {
+		ID:                 XAIGrokCodeFast1,
+		Name:               "Grok Code Fast 1",
 		Provider:           ProviderXAI,
-		APIModel:           "grok-3-fast-beta",
-		CostPer1MIn:        5,
-		CostPer1MInCached:  0,
-		CostPer1MOut:       25,
+		APIModel:           "grok-code-fast-1",
+		CostPer1MIn:        0.20,
+		CostPer1MInCached:  0.02,
+		CostPer1MOut:       1.50,
 		CostPer1MOutCached: 0,
-		ContextWindow:      131_072,
+		ContextWindow:      256_000,
+		DefaultMaxTokens:   10_000,
+	},
+	XAIGrok4FastReasoning: {
+		ID:                 XAIGrok4FastReasoning,
+		Name:               "Grok 4 Fast Reasoning",
+		Provider:           ProviderXAI,
+		APIModel:           "grok-4-fast-reasoning",
+		CostPer1MIn:        0.20,
+		CostPer1MInCached:  0.05,
+		CostPer1MOut:       0.50,
+		CostPer1MOutCached: 0,
+		ContextWindow:      2_000_000,
 		DefaultMaxTokens:   20_000,
 	},
-	XAiGrok3MiniFastBeta: {
-		ID:                 XAiGrok3MiniFastBeta,
-		Name:               "Grok3 Mini Fast Beta",
+	XAIGrok4FastNonReasoning: {
+		ID:                 XAIGrok4FastNonReasoning,
+		Name:               "Grok 4 Fast Non-Reasoning",
 		Provider:           ProviderXAI,
-		APIModel:           "grok-3-mini-fast-beta",
-		CostPer1MIn:        0.6,
-		CostPer1MInCached:  0,
-		CostPer1MOut:       4.0,
+		APIModel:           "grok-4-fast-non-reasoning",
+		CostPer1MIn:        0.20,
+		CostPer1MInCached:  0.05,
+		CostPer1MOut:       0.50,
 		CostPer1MOutCached: 0,
-		ContextWindow:      131_072,
+		ContextWindow:      2_000_000,
 		DefaultMaxTokens:   20_000,
 	},
 }
